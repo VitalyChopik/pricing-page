@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'Главная'
+})
+
+<body>
+  <div class="wrapper" id="root">
+    <!-- @@include('html/header.html', {}) -->
+    <!-- https://www.effectiveexperiments.com/ -->
+    <main class="overflow-x-hidden min-h-screen">
+      @@include('html/plans.html', {})
+      @@include('html/plansTable.html', {})
+      <!-- @@include('html/partners.html', {}) -->
+      @@include('html/faq.html', {})
+    </main>
+    <!-- @@include('html/footer.html', {}) -->
+  </div>
+  @@include('html/script.html', {})
+</body>
+
+</html>

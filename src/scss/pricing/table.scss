@@ -1,0 +1,125 @@
+.table {
+  &__section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #ffffff;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: 'Cabin';
+    font-weight: 700;
+    margin-bottom: 78px;
+  }
+
+  &__block {
+    width: 100%;
+    border-spacing: 0;
+  }
+
+  &__sidebar {
+    text-align: right;
+    max-width: 235px;
+    padding-right: 60px;
+  }
+
+  &__plans {
+    max-width: 240px;
+    padding: 0 12px;
+    text-align: center;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 3;
+  }
+
+  &__header-row {}
+
+  &__header-link {
+    margin: 0 auto;
+  }
+
+  &__header-col {
+    padding: 11px;
+  }
+
+  &__body {}
+
+  &__body-row {}
+
+
+
+  &__body-col {
+    border: 6px solid #ffffff;
+    border-bottom: none;
+    border-top: none;
+
+    &.table__sidebar {
+      padding: 11px;
+      position: relative;
+      border: 6px solid transparent;
+
+      &:hover .hover__popup {
+        display: flex;
+      }
+    }
+
+    &.table__plans {
+      background: #FAFAFA;
+    }
+  }
+
+  &__body-hover {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 318px;
+  }
+
+  &__body-col {
+    .table__body-title & {
+      font-family: 'Cabin';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      color: #191D23;
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__body-icon {
+    max-width: 20px;
+    height: auto;
+  }
+
+  &__body-text {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #646F81;
+
+    &.bold {
+      font-weight: 800;
+    }
+  }
+
+  &__body-image {
+    max-width: 130px;
+    margin: 25px 0;
+  }
+}
