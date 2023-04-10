@@ -8,7 +8,42 @@
 
   &__container {
     text-align: center;
+    max-width: 725px;
+    margin: 0 auto;
   }
 
-  &__title {}
+  &__title {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 65px;
+    color: #FFFFFF;
+    margin-bottom: 23px;
+  }
+
+  &__subtitle {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 25px;
+    color: #FFFFFF;
+    max-width: 660px;
+    margin: 0 auto 23px;
+  }
+
+  &__btn {
+    width: 136px;
+    height: 44px;
+    background: #5261DF;
+    font-size: 14px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.3px;
+    color: #FFFFFF;
+    margin: 0 auto;
+  }
 }
