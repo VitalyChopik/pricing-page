@@ -26,14 +26,36 @@
 
   &__sidebar {
     text-align: right;
-    max-width: 235px;
-    padding-right: 60px;
+    width: 235px;
+
+    @media(max-width:1400px) {
+      width: auto;
+      max-width: 213px;
+    }
+
   }
 
   &__plans {
-    max-width: 240px;
+    width: 240px;
     padding: 0 12px;
     text-align: center;
+
+    @media(max-width:1400px) {
+      width: auto;
+      max-width: 240px;
+    }
+
+    @media(max-width:820px) {
+      display: none;
+    }
+
+    &.active {
+      @media(max-width:820px) {
+        display: table-cell;
+        max-width: 50%;
+        width: 100%;
+      }
+    }
   }
 
   &__header {
@@ -41,9 +63,77 @@
     top: 0;
     background: #ffffff;
     z-index: 3;
+
+    @media(max-width:882px) {
+      position: static;
+    }
   }
 
   &__header-row {}
+
+  &__header-list {
+    display: none;
+    padding-left: 0;
+    background: #ffffff;
+    z-index: 5;
+    position: relative;
+    overflow: hidden;
+
+    @media(max-width:882px) {
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      padding: 15px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 35px;
+      right: 16px;
+      content: "";
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-left: auto;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23191D23'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-size: 1.25rem;
+      transition: all 0.5s;
+    }
+
+    &.active {
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__header-item {
+    display: none;
+    order: 2;
+    padding: 16px 0;
+    border-top: 3px solid rgba(205, 214, 218, 0.25);
+    padding: 16px 0;
+    margin-bottom: -3px;
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #191D23;
+    transition: all 0.5s;
+
+    &.active {
+      display: flex;
+      order: 1;
+    }
+
+    .active & {
+      display: flex;
+    }
+  }
 
   &__header-link {
     margin: 0 auto;
@@ -66,11 +156,24 @@
 
     &.table__sidebar {
       padding: 11px;
+      padding-right: 60px;
       position: relative;
       border: 6px solid transparent;
 
+      @media(max-width:1400px) {
+        padding-right: 11px;
+      }
+
+      @media(max-width:882px) {
+        padding: 6px;
+      }
+
       &:hover .hover__popup {
         display: flex;
+
+        @media(max-width:992px) {
+          display: none;
+        }
       }
     }
 

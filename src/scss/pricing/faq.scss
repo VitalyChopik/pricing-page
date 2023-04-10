@@ -20,6 +20,11 @@
     line-height: 65px;
     color: #FFFFFF;
     margin-bottom: 23px;
+
+    @media(max-width:992px) {
+      font-size: 36px;
+      line-height: 44px;
+    }
   }
 
   &__subtitle {

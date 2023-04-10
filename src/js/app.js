@@ -65,3 +65,70 @@ isWebp()
 /* Раскомментировать для использования */
 // togglePopupWindows()
 // =======================================================================================================
+const accordionBoxs = document.querySelectorAll('.accordion__box');
+accordionBoxs.forEach(item => {
+  const accordionBoxBtn = item.querySelector('.accordion__box-title');
+  const accordionBoxText = item.querySelector('.accordion__box-text');
+  accordionBoxBtn.addEventListener('click', () => {
+    if (item.classList.contains('active')) {
+      item.classList.toggle('active');
+    } else {
+      accordionBoxs.forEach(elem => {
+        elem.classList.remove('active');
+      });
+      item.classList.toggle('active');
+    }
+  })
+});
+
+//tabs
+const tableHeaderBoxs = document.querySelectorAll('.table__header-row .table__plans');
+const tableBodyRows = document.querySelectorAll('.table__body-row');
+const tableHeaderCols = document.querySelectorAll('.table__header-col.table__plans');
+const tableHeaderList = document.querySelector('.table__header-list');
+
+tableHeaderCols.forEach((item, index) => {
+  const tableHeaderTitle = item.querySelector('.table__header-title');
+  const tableHeaderListItem = document.createElement('li');
+  tableHeaderListItem.classList.add('table__header-item');
+  tableHeaderListItem.innerHTML = tableHeaderTitle.innerHTML;
+  tableHeaderList.append(tableHeaderListItem);
+
+  tableHeaderListItem.addEventListener('click', () => {
+    if (tableHeaderList.classList.contains('active')) {
+      tableHeaderList.classList.remove('active');
+
+      tableHeaderListItem.classList.add('active');
+
+      tableHeaderList.querySelectorAll('.table__header-item').forEach((item, i) => {
+        if (i !== index) {
+          item.classList.remove('active');
+        }
+      });
+      tableBodyRows.forEach(tableBodyRow => {
+        const tableBodyBoxs = tableBodyRow.querySelectorAll('.table__plans');
+        tableBodyBoxs.forEach((bodyBox) => {
+          bodyBox.classList.remove('active');
+        });
+        tableBodyBoxs[index].classList.add('active');
+      })
+
+
+
+      tableHeaderBoxs.forEach((headerBox) => {
+        headerBox.classList.remove('active');
+      });
+      tableHeaderBoxs[index].classList.add('active');
+    } else {
+      tableHeaderList.classList.add('active');
+    }
+  });
+});
+
+tableBodyRows.forEach(tableBodyRow => {
+  const tableBodyBoxs = tableBodyRow.querySelectorAll('.table__plans');
+  tableBodyBoxs[0].classList.add('active');
+})
+tableHeaderList.firstElementChild.classList.add('active');
+tableHeaderBoxs[0].classList.add('active');
+
