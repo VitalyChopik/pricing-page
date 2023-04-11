@@ -128,7 +128,14 @@ tableHeaderCols.forEach((item, index) => {
 tableBodyRows.forEach(tableBodyRow => {
   const tableBodyBoxs = tableBodyRow.querySelectorAll('.table__plans');
   tableBodyBoxs[0].classList.add('active');
-})
+  const tableBodySidebars = tableBodyRow.querySelectorAll('.table__sidebar');
+  tableBodySidebars.forEach(elem => {
+    const tableBodySidebar = elem.querySelector('.table__body-hover');
+    if (tableBodySidebar) {
+      elem.classList.add('hover__block');
+    }
+  });
+});
 tableHeaderList.firstElementChild.classList.add('active');
 tableHeaderBoxs[0].classList.add('active');
 

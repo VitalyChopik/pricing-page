@@ -50,5 +50,9 @@
     letter-spacing: -0.3px;
     color: #FFFFFF;
     margin: 0 auto;
+
+    &:hover {
+      background: #3443C1;
+    }
   }
 }
